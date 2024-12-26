@@ -2,6 +2,7 @@ import { CoursesService } from './../service/courses.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { Course } from '../model/course';
 import { AppMaterialModule } from '../../share/app-material/app-material.module';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -12,7 +13,7 @@ import { AppMaterialModule } from '../../share/app-material/app-material.module'
 })
 export class CoursesComponent implements OnInit{
 
-  courses: Course[] = [];
+  courses: Observable<Course[]>;
 
   displayedColumns: string[] = ['id', 'name', 'category'];
 
